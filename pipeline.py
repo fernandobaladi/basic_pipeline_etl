@@ -129,7 +129,7 @@ def __init__():
                                                                     'drive', 'size',
                                                                     'type', 'paint_color',
                                                                     'state', 'model', 'posting_date']]
-                    transforming_clean = transforming_droped_columns.dropna().reset_index().loc[:1000,:].copy(deep=True)
+                    transforming_clean = transforming_droped_columns.dropna().reset_index().copy(deep=True)
                 
                     #data transformation
                     

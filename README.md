@@ -25,6 +25,8 @@ To execute the file by shell, you have to pass two arguments:
 Example:
      `> python3 pipeline.py "your_path\vehicles.csv" 1`
 
+#### Warning
+If you don't run it in this way, it will crash. Even if you want to delete or download the database.
 
 ## About the dataset
 
@@ -53,9 +55,17 @@ The dataset that you will pass to the algorithm should be in CSV format. And sho
 ### Warning!!!!
 This dataset is 1.5GB after unzipping, and during the execution it will only upload the first 1001 rows that it finds, the other rows will be discarded. Also I added a really small sub-dataset of the original one. You are free to use it.
 
+## About the algorithm
+
+The algorithm is simple, it receives the dataset in CSV, then it slice it with the information that we want and drop the rows with NA values.
+
+The dataset is transformed, adding some columns as the sale year, that comes from the posted_date column, or the model_index that is a way to get the numeric value of the car model.
+
+Also there are some usefull transformations, as the description transformation that was made to avoid issues inserting in the database or the column value_insert, that acts as a helper to do the insertion.
+
 ## Database
 
-The database is a PostgreSQL database hosted in ElephantSQL with a maximum storage of 20MB. And all the queries are based in PostgreSQL.
+The database is a PostgreSQL database hosted in ElephantSQL with a maximum storage of 20MB. And all the queries are based in PostgreSQL. The connection was made using the library Psycopg2, where you can send PostreSQL.
  
 ## Logs file
 
