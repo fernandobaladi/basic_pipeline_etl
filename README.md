@@ -68,7 +68,3 @@ If you want to delete the information of the table, you can pass the number 1 as
 ## Export database information
 
 If you want to delete the information of the table, you can pass the number 2 as the second parameter. It will download all the table and stored it a folder called "exports" with a CSV file called after current timestamp.
-
-## Recomendations
-
-Between every execution, you must execute the database cleaning function because the IDs are coming from the dataset, and in every execution it will try to reload the same IDs and it will cause an error.
